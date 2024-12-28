@@ -96,26 +96,26 @@ const bankAccount : BankAccount = {
 
 //extend 
 
-interface Book{
-    name : string,
-    price: number
-}
+// interface Book{
+//     name : string,
+//     price: number
+// }
 
-interface EBOOK extends Book{
-     format: string,
-    fileSize: number,
-}
+// interface EBOOK extends Book{
+//      format: string,
+//     fileSize: number,
+// }
 
-const ebook : EBOOK = {
-     name: 'skye new',
-     price :666,
-     format: 'pdf',
-     fileSize : 666,
-}
-const book : Book ={
-    name: 'money',
-    price: 562,
-};
+// const ebook : EBOOK = {
+//      name: 'skye new',
+//      price :666,
+//      format: 'pdf',
+//      fileSize : 666,
+// }
+// const book : Book ={
+//     name: 'money',
+//     price: 562,
+// };
 
 
 /** merge two interface */
@@ -125,3 +125,32 @@ interface  Book {
     name : string;
     price : number;
 }
+
+interface Book {
+    size : number;
+}
+
+const book : Book  ={
+    name : 'real money',
+    price : 5615,
+    size :45,
+}
+
+
+/** unions */
+
+type ID = number | string;   // it can make a number or a string 
+
+// narrowing 
+
+function printId (id: ID) {
+    if( typeof id  === 'string'){
+        console.log(id.toUpperCase());
+        
+    } else {
+        console.log(id);
+    }
+       
+};
+
+printId("ads");
