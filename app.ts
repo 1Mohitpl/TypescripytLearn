@@ -35,9 +35,93 @@ type User = {
     addres?: string;   // take it as optional
 }
 
-const user : User = {
+
+
+// console.log(user);
+
+function login(userdata : User): User{
+    return userdata;
+}
+
+
+const user = {
     name : 'pol',
     age : 24
 }
+console.log(login(user));
 
-console.log(user);
+/*these are all custome types*/
+type Id = number | string;   // id can be an number or string;
+
+const userId : Id = "43"
+console.log(userId);
+
+console.log(typeof(userId));
+
+
+/** Interfaces */
+
+interface Transaction {
+    payerAccountNumber: number;
+    payeeAccountNumber: number;
+}
+
+interface BankAccount {
+    accountNumber :number;
+    accountHolder: string;
+    balance : number;
+
+    isactive : boolean;
+     transactions: Transaction[]; 
+}
+
+const transaction1 : Transaction = {
+    payerAccountNumber : 65564,
+    payeeAccountNumber : 556,
+} 
+
+const transaction2: Transaction = {
+    payerAccountNumber: 65646,
+    payeeAccountNumber:231,
+}
+
+
+const bankAccount : BankAccount = {
+    accountNumber: 564633159,
+    accountHolder: 'john doa',
+    balance : 6000,
+    isactive :true,
+    transactions : [transaction1, transaction2]
+}
+
+//extend 
+
+interface Book{
+    name : string,
+    price: number
+}
+
+interface EBOOK extends Book{
+     format: string,
+    fileSize: number,
+}
+
+const ebook : EBOOK = {
+     name: 'skye new',
+     price :666,
+     format: 'pdf',
+     fileSize : 666,
+}
+const book : Book ={
+    name: 'money',
+    price: 562,
+};
+
+
+/** merge two interface */
+
+
+interface  Book {
+    name : string;
+    price : number;
+}
