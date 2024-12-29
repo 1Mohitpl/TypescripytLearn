@@ -154,3 +154,41 @@ function printId (id: ID) {
 };
 
 printId("ads");
+
+
+// Generics   
+
+
+
+function isleagl (age : number ){
+    if(age < 18){
+        return false;
+    } else{
+        return true;
+    }
+}
+
+let x= isleagl(23);
+console.log(x);
+
+
+
+
+function sum (a: number, b: number){
+     return a+b;
+}
+
+const ans = sum(3, 4);
+console.log(ans);
+
+
+function printing(fn: () => void){  // herer we can basically explicityly give type of funtion that is void function
+    setTimeout(fn, 4000);
+
+}
+
+
+printing(function () {
+    console.log("i want to print it ");
+    
+})
