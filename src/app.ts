@@ -94,6 +94,30 @@ const bankAccount : BankAccount = {
     transactions : [transaction1, transaction2]
 }
 
+// types can use into in unions and AND, but interface does not provide that features
+type CarOwner = {
+      name : string;
+      phoneNo: number;
+      address: string;
+}
+
+interface Seller {
+    age: number;
+    address: string;
+    
+}
+
+type buyer = CarOwner & Seller;
+
+const info : buyer ={
+      name: 'jhone',
+      age: 23,
+      address : 'india',
+      phoneNo :656565656,
+}
+
+
+
 //extend 
 
 // interface Book{
