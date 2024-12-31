@@ -216,3 +216,34 @@ printing(function () {
     console.log("i want to print it ");
     
 })
+
+
+/**Concept of Enums */
+
+enum kepress {
+    up = "up",
+    down = "down",
+    right = "right",
+    left = "left"
+}
+
+function PressSomething (keypressed : kepress){
+      if(keypressed == kepress.up){
+       
+        
+      } 
+
+      if(keypressed == kepress.left){
+       
+        
+      }
+}
+
+
+
+function FirstName<T>(arr: T[]){
+      return arr[0];
+}
+
+const res = FirstName(["mohit","paul"]);
+console.log(res.toUpperCase());
